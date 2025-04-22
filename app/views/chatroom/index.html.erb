@@ -1,1 +1,32 @@
-<h2>Welcome to your Chatroom</h2>
+<h1 class="d-flex flex-column-reverse align-items-center justify-content-center fw-semibold fs-4 font-serif text-center">
+  Say Something...!
+  <img src="/fav.png", alt="icon", width: 32, height: 32, class="rounded-circle p-1 my-1 border border-light shadow-sm">
+</h1>
+<div class="d-flex gap-4 my-5">
+  <!-- Chat Area -->
+  <div class="w-100 me-3 border border-secondary p-4 shadow rounded" style="flex: 1;">
+    <div id="message-container" class="d-flex flex-column gap-3 py-4 overflow-auto" style="max-height: 24rem;">
+      <%= render @messages %>
+    </div>
+    
+    <%# <div> %>
+      <%# <%= form_for(@message, html: { role: "form" }, url: message_path, method: "POST", remote: true) do |f| %>
+        <%# <div class="d-flex gap-3 align-items-center mt-3"> %>
+          <%# <div class="flex-fill"> %>
+            <%# <%= f.text_field :body, placeholder: "Enter a message...", class: "form-control" %>
+          <%# </div> %>
+          <%# <div class="text-warning"> %>
+            <%# <%= f.button '<i class="fas fa-edit fs-3 cursor-pointer"></i>'.html_safe, class: "btn btn-link p-0" %>
+          <%# </div>
+        </div> %>
+      <%# <% end %>
+    <%# </div> %>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="d-flex flex-column gap-2 border border-secondary shadow p-4 bg-dark text-white rounded" style="width: 20%;">
+    <%= link_to "Home", root_path, class: "btn btn-dark text-start #{'bg-secondary' if current_page?(root_path)}" %>
+    <%= link_to "Messages", root_path, class: "btn btn-dark text-start" %>
+    <%= link_to "Friends", root_path, class: "btn btn-dark text-start" %>
+  </div>
+</div>

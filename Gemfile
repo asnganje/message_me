@@ -65,3 +65,4 @@ end
 gem "dotenv-rails"
 
 gem "cssbundling-rails", "~> 1.4"
+gem "bcrypt", "~> 3.1", ">= 3.1.18"
