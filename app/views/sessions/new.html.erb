@@ -1,1 +1,47 @@
-<h2>Login</h2>
+<div class="d-flex flex-column-reverse align-items-center justify-content-center gap-3 my-5 text-center fw-semibold fs-4 font-serif">
+  <i class="fa-solid fa-power-off text-warning display-4 cursor-pointer"></i>
+  <span>Welcome to MessageMe - A Complete Chat App</span>
+</div>
+
+<div class="border border-secondary shadow rounded p-4 w-100 mx-auto d-flex" style="max-width: 768px;">
+  <!-- Login Form -->
+  <div class="w-50 pe-4 d-flex flex-column align-items-center">
+    <%= form_with scope: :session, url: login_path, html: { class: "w-100", role: "form" }, local: true do |f| %>
+      <div class="mb-3 w-100">
+        <%= f.label :username, "Username", class: "form-label text-secondary" %>
+        <div class="input-group">
+          <span class="input-group-text bg-light border"><i class="fa-solid fa-user text-secondary"></i></span>
+          <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="mb-4 w-100">
+        <%= f.label :password, "Password", class: "form-label text-secondary" %>
+        <div class="input-group">
+          <span class="input-group-text bg-light border"><i class="fa-solid fa-lock text-secondary"></i></span>
+          <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <%= f.button "Login", class: "btn text-white px-4", style: "background-color: #fd7e14;" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Divider -->
+  <div class="position-relative d-flex align-items-center justify-content-center mx-3" style="width: 2px; background-color: #ccc;">
+    <span class="position-absolute top-50 start-50 translate-middle px-2 bg-white text-secondary small">OR</span>
+  </div>
+
+  <!-- Sign Up Button -->
+  <div class="w-50 ps-4 d-flex flex-column align-items-center justify-content-center">
+    <button
+      class="btn text-white d-flex align-items-center gap-2 px-4 py-2"
+      style= "background-color: #fd7e14"
+    >
+      <i class="fas fa-edit fs-5"></i>
+      Sign Up
+    </button>
+  </div>
+</div>
