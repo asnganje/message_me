@@ -9,16 +9,18 @@
       <%= render @messages %>
     </div>
     
-    <%# <div> %>
-      <%# <%= form_for(@message, html: { role: "form" }, url: message_path, method: "POST", remote: true) do |f| %>
+  <%# <div> %>
+      <%# <%= form_with model: @message, url: message_path, method: :post, html: { role: "form" }, remote: true do |f| %>
         <%# <div class="d-flex gap-3 align-items-center mt-3"> %>
           <%# <div class="flex-fill"> %>
             <%# <%= f.text_field :body, placeholder: "Enter a message...", class: "form-control" %>
           <%# </div> %>
           <%# <div class="text-warning"> %>
-            <%# <%= f.button '<i class="fas fa-edit fs-3 cursor-pointer"></i>'.html_safe, class: "btn btn-link p-0" %>
-          <%# </div>
-        </div> %>
+            <%# <%= f.button class: "btn btn-link p-0" do %>
+              <%# <i class="fas fa-edit fs-3 cursor-pointer"></i> %>
+            <%# <% end %>
+          <%# </div> %>
+        <%# </div> %>
       <%# <% end %>
     <%# </div> %>
   </div>
